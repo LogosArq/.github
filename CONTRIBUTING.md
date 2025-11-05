@@ -1,65 +1,48 @@
-# Como Contribuir
+# Diretrizes de Contribuição
 
-Ficamos muito felizes por você se interessar em contribuir com [Nome do Projeto]! Toda contribuição é bem-vinda.
+Bem-vindo(a) à equipe! Este documento estabelece as diretrizes para contribuir com este projeto. Segui-las garante a qualidade do código e a eficiência da equipe.
 
-Ao participar deste projeto, você concorda em seguir nosso [Código de Conduta](CODE_OF_CONDUCT.md).
+Ao contribuir, você concorda em seguir nosso [Código de Conduta](CODE_OF_CONDUCT.md) (que define a cultura da nossa equipe).
 
-## Como Posso Ajudar?
+## Configuração do Ambiente
 
-### Reportando Bugs
-
-- **Verifique se o bug já não foi reportado:** Pesquise nas [Issues](link-para-issues) do projeto.
-- **Se não foi:** Abra uma nova issue usando o template de "Bug Report".
-- **Descreva em detalhes:**
-  - Passos exatos para reproduzir o bug.
-  - O que você esperava que acontecesse.
-  - O que de fato aconteceu (inclua logs de erro e screenshots, se possível).
-  - A versão do projeto que você está usando.
-
-### Sugerindo Melhorias
-
-- Abra uma nova issue usando o template de "Feature Request".
-- Descreva o problema que sua sugestão resolve e por que ela seria útil.
-
-### Contribuindo com Código
-
-Este é o fluxo de trabalho básico para enviar uma contribuição:
-
-1.  **Faça um Fork** deste repositório.
-2.  **Configure o ambiente:**
+1.  **Clone o Repositório:**
+    Como este é um projeto privado, você não precisa fazer "Fork". Clone o repositório diretamente (assumindo que você tenha permissão).
     ```bash
-    # Ex: Clone seu fork
-    git clone [https://github.com/SEU-USUARIO/NOME-DO-PROJETO.git](https://github.com/SEU-USUARIO/NOME-DO-PROJETO.git)
-    cd NOME-DO-PROJETO
-    # Ex: Instale as dependências (ajuste para seu projeto)
-    mvn install
+    git clone [URL-DO-REPOSITORIO-AQUI]
+    cd [NOME-DO-PROJETO]
     ```
-3.  **Crie uma Branch:**
-    ```bash
-    # Use um nome descritivo (ex: fix/bug-123 ou feature/nova-funcionalidade)
-    git checkout -b feature/minha-contribuicao
-    ```
-4.  **Codifique e Teste:**
-    - Faça suas alterações no código.
-    - **Adicione testes!** Sua contribuição precisa ser testada.
-    - Rode a suíte de testes localmente para garantir que nada quebrou:
-      ```bash
-      # Ex: (ajuste para seu projeto)
-      mvn test
-      ```
-5.  **Faça o Commit:**
-    - Use mensagens de commit claras e descritivas (sugerimos [Conventional Commits](https://www.conventionalcommits.org/)).
-    ```bash
-    git add .
-    git commit -m "feat: Adiciona funcionalidade X que faz Y"
-    ```
-6.  **Envie para o seu Fork (Push):**
-    ```bash
-    git push origin feature/minha-contribuicao
-    ```
-7.  **Abra um Pull Request (PR):**
-    - Vá até o repositório original no GitHub e abra um Pull Request.
-    - Preencha o template do PR, linkando a issue que sua contribuição resolve (ex: "Closes #123").
-    - Aguarde a revisão. Responderemos o mais breve possível!
 
-Obrigado pela sua contribuição!
+2.  **Instale as Dependências:**
+    *(Esta seção deve ser adaptada para cada serviço. Ex: Java/Maven, Node/NPM, etc.)*
+    ```bash
+    # Exemplo para Java/Maven:
+    mvn clean install
+    ```
+
+3.  **Variáveis de Ambiente:**
+    Copie o arquivo de exemplo `.env.example` para um novo arquivo `.env` e preencha as variáveis locais necessárias (ex: senhas de banco de dados, URLs de outros serviços).
+    ```bash
+    cp .env.example .env
+    ```
+
+4.  **Serviços Dependentes:**
+    Este projeto pode depender de outros serviços (ex: um banco de dados, outra API). Use o Docker Compose para subir a infraestrutura local.
+    ```bash
+    # Exemplo: (pode estar na raiz do projeto ou no repo 'infra')
+    docker-compose up -d
+    ```
+
+5.  **Rode o Projeto:**
+    ```bash
+    # Exemplo para Quarkus:
+    mvn quarkus:dev
+    ```
+
+## Rodando Testes
+
+É **obrigatório** que todos os testes passem antes de um Pull Request ser aberto.
+
+```bash
+# Exemplo para Java/Maven:
+mvn test
