@@ -45,6 +45,7 @@ Ao contribuir, você concorda em seguir nosso [Código de Conduta](CODE_OF_CONDU
 ```bash
 # Exemplo para Java/Maven:
 mvn test
+```
 
 Qualquer nova funcionalidade ou correção de bug DEVE incluir novos testes que cubram a mudança.
 
@@ -98,37 +99,3 @@ Preencha o template do Pull Request que aparecerá automaticamente. Um PR só se
 
 
 ---
-
-### 2. `PULL_REQUEST_TEMPLATE.md` (O "Checklist de Qualidade")
-
-**Onde colocar:** Na pasta `.github` (ex: `app-web/.github/PULL_REQUEST_TEMPLATE.md`).
-
-**Objetivo:** Forçar uma descrição padronizada para cada PR, garantindo que o revisor (seu colega ou você) tenha todo o contexto necessário e que o autor do PR tenha feito uma auto-revisão.
-
-```markdown
-## 🎯 Qual o objetivo deste PR?
-
-## 🔗 Tarefa Relacionada
-
-## Type of change
-- [ ] 🐞 Correção de Bug (Bugfix)
-- [ ] ✨ Nova Funcionalidade (Feature)
-- [ ] 💥 Mudança Quebrável (Breaking Change)
-- [ ] ♻️ Refatoração (Refactor)
-- [ ] 📚 Documentação (Docs)
-- [ ] 📦 Build/CI (Chore)
-- [ ] 🧪 Testes (Tests)
-
-
-## ✅ Checklist de Auto-Revisão
-
-- [ ] Meu código segue os padrões de estilo e qualidade deste projeto.
-- [ ] Eu adicionei testes que provam que minha correção é eficaz ou que minha feature funciona.
-- [ ] Todos os testes (novos e existentes) passaram localmente.
-- [ ] Eu atualizei a documentação interna (comentários de código, Javadoc, etc.)
-- [ ] Eu atualizei a documentação externa (ex: README, documentação da API/Swagger), se aplicável.
-
-
-## 🖼️ Screenshots (Se Aplicável)
-
-## 💡 Observações Adicionais
