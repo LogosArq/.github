@@ -38,6 +38,8 @@ Ao contribuir, você concorda em seguir nosso [Código de Conduta](CODE_OF_CONDU
     # Exemplo para Quarkus:
     mvn quarkus:dev
     ```
+
+````markdown
 ## Rodando Testes
 
 É **obrigatório** que todos os testes passem antes de um Pull Request ser aberto.
@@ -45,57 +47,64 @@ Ao contribuir, você concorda em seguir nosso [Código de Conduta](CODE_OF_CONDU
 ```bash
 # Exemplo para Java/Maven:
 mvn test
-```
+````
 
-Qualquer nova funcionalidade ou correção de bug DEVE incluir novos testes que cubram a mudança.
+**Qualquer nova funcionalidade ou correção de bug DEVE incluir novos testes** que cubram a mudança.
 
-Nosso Fluxo de Trabalho (Gitflow)
-Sincronize sua main: Sempre comece da branch main (ou develop, se usarem) atualizada.
+-----
 
-Bash
+## Nosso Fluxo de Trabalho (Gitflow)
 
+### 1\. Sincronize sua `main`
+
+Sempre comece da branch `main` (ou `develop`, se usarem) atualizada.
+
+```bash
 git checkout main
 git pull origin main
-Crie sua Branch: Nunca trabalhe diretamente na main. Crie uma nova branch seguindo nosso padrão de nomenclatura:
+```
 
-Features (Novas Funcionalidades): feature/[ID-TAREFA]-descricao-curta
+### 2\. Crie sua Branch
 
-Fixes (Correção de Bugs): fix/[ID-TAREFA]-descricao-curta
+Nunca trabalhe diretamente na `main`. Crie uma nova branch seguindo nosso padrão de nomenclatura:
 
-Chores (Tarefas técnicas): chore/[ID-TAREFA]-refatoracao-build
+  * **Features (Novas Funcionalidades):** `feature/[ID-TAREFA]-descricao-curta`
+  * **Fixes (Correção de Bugs):** `fix/[ID-TAREFA]-descricao-curta`
+  * **Chores (Tarefas técnicas):** `chore/[ID-TAREFA]-refatoracao-build`
 
-Exemplo:
+**Exemplo:**
 
-Bash
-
+```bash
 git checkout -b feature/TASK-101-login-com-google
-Codifique, Teste, Faça o Commit: Faça seu trabalho. Faça commits pequenos e atômicos. Use o padrão Conventional Commits para as mensagens:
+```
 
-feat: (nova funcionalidade)
+### 3\. Codifique, Teste, Faça o Commit
 
-fix: (correção de bug)
+Faça seu trabalho. Faça commits pequenos e atômicos. Use o padrão [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) para as mensagens:
 
-docs: (mudanças na documentação)
+  * `feat:` (nova funcionalidade)
+  * `fix:` (correção de bug)
+  * `docs:` (mudanças na documentação)
+  * `style:` (formatação, ponto-e-vírgula, etc.)
+  * `refactor:` (refatoração de código que não altera funcionalidade)
+  * `test:` (adição ou correção de testes)
+  * `chore:` (atualização de build, dependências, etc.)
 
-style: (formatação, ponto-e-vírgula, etc.)
+**Exemplo de commit:**
 
-refactor: (refatoração de código que não altera funcionalidade)
-
-test: (adição ou correção de testes)
-
-chore: (atualização de build, dependências, etc.)
-
-Exemplo de commit:
-
-Bash
-
+```bash
 git commit -m "feat: Adiciona endpoint de autenticação OAuth2"
-Abra um Pull Request (PR): Envie sua branch para o repositório e abra um Pull Request.
+```
 
-Bash
+### 4\. Abra um Pull Request (PR)
 
+Envie sua branch para o repositório e abra um Pull Request.
+
+```bash
 git push origin feature/TASK-101-login-com-google
+```
+
 Preencha o template do Pull Request que aparecerá automaticamente. Um PR só será "mergeado" após a aprovação de pelo menos um outro membro da equipe e com a CI (GitHub Actions) passando.
 
-
----
+```
+```
