@@ -1,3 +1,10 @@
+---
+name: 🐛 Relatório de Bug
+about: Crie um relatório para nos ajudar a melhorar
+title: '[BUG] '
+labels: 'bug'
+---
+
 **Descreva o Bug**
 Uma descrição clara do que aconteceu.
 
