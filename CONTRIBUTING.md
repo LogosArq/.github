@@ -38,7 +38,6 @@ Ao contribuir, você concorda em seguir nosso [Código de Conduta](CODE_OF_CONDU
     # Exemplo para Quarkus:
     mvn quarkus:dev
     ```
-
 ## Rodando Testes
 
 É **obrigatório** que todos os testes passem antes de um Pull Request ser aberto.
@@ -46,3 +45,90 @@ Ao contribuir, você concorda em seguir nosso [Código de Conduta](CODE_OF_CONDU
 ```bash
 # Exemplo para Java/Maven:
 mvn test
+
+Qualquer nova funcionalidade ou correção de bug DEVE incluir novos testes que cubram a mudança.
+
+Nosso Fluxo de Trabalho (Gitflow)
+Sincronize sua main: Sempre comece da branch main (ou develop, se usarem) atualizada.
+
+Bash
+
+git checkout main
+git pull origin main
+Crie sua Branch: Nunca trabalhe diretamente na main. Crie uma nova branch seguindo nosso padrão de nomenclatura:
+
+Features (Novas Funcionalidades): feature/[ID-TAREFA]-descricao-curta
+
+Fixes (Correção de Bugs): fix/[ID-TAREFA]-descricao-curta
+
+Chores (Tarefas técnicas): chore/[ID-TAREFA]-refatoracao-build
+
+Exemplo:
+
+Bash
+
+git checkout -b feature/TASK-101-login-com-google
+Codifique, Teste, Faça o Commit: Faça seu trabalho. Faça commits pequenos e atômicos. Use o padrão Conventional Commits para as mensagens:
+
+feat: (nova funcionalidade)
+
+fix: (correção de bug)
+
+docs: (mudanças na documentação)
+
+style: (formatação, ponto-e-vírgula, etc.)
+
+refactor: (refatoração de código que não altera funcionalidade)
+
+test: (adição ou correção de testes)
+
+chore: (atualização de build, dependências, etc.)
+
+Exemplo de commit:
+
+Bash
+
+git commit -m "feat: Adiciona endpoint de autenticação OAuth2"
+Abra um Pull Request (PR): Envie sua branch para o repositório e abra um Pull Request.
+
+Bash
+
+git push origin feature/TASK-101-login-com-google
+Preencha o template do Pull Request que aparecerá automaticamente. Um PR só será "mergeado" após a aprovação de pelo menos um outro membro da equipe e com a CI (GitHub Actions) passando.
+
+
+---
+
+### 2. `PULL_REQUEST_TEMPLATE.md` (O "Checklist de Qualidade")
+
+**Onde colocar:** Na pasta `.github` (ex: `app-web/.github/PULL_REQUEST_TEMPLATE.md`).
+
+**Objetivo:** Forçar uma descrição padronizada para cada PR, garantindo que o revisor (seu colega ou você) tenha todo o contexto necessário e que o autor do PR tenha feito uma auto-revisão.
+
+```markdown
+## 🎯 Qual o objetivo deste PR?
+
+## 🔗 Tarefa Relacionada
+
+## Type of change
+- [ ] 🐞 Correção de Bug (Bugfix)
+- [ ] ✨ Nova Funcionalidade (Feature)
+- [ ] 💥 Mudança Quebrável (Breaking Change)
+- [ ] ♻️ Refatoração (Refactor)
+- [ ] 📚 Documentação (Docs)
+- [ ] 📦 Build/CI (Chore)
+- [ ] 🧪 Testes (Tests)
+
+
+## ✅ Checklist de Auto-Revisão
+
+- [ ] Meu código segue os padrões de estilo e qualidade deste projeto.
+- [ ] Eu adicionei testes que provam que minha correção é eficaz ou que minha feature funciona.
+- [ ] Todos os testes (novos e existentes) passaram localmente.
+- [ ] Eu atualizei a documentação interna (comentários de código, Javadoc, etc.)
+- [ ] Eu atualizei a documentação externa (ex: README, documentação da API/Swagger), se aplicável.
+
+
+## 🖼️ Screenshots (Se Aplicável)
+
+## 💡 Observações Adicionais
