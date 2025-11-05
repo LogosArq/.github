@@ -39,7 +39,6 @@ Ao contribuir, você concorda em seguir nosso [Código de Conduta](CODE_OF_CONDU
     mvn quarkus:dev
     ```
 
-````markdown
 ## Rodando Testes
 
 É **obrigatório** que todos os testes passem antes de um Pull Request ser aberto.
@@ -105,6 +104,3 @@ git push origin feature/TASK-101-login-com-google
 ```
 
 Preencha o template do Pull Request que aparecerá automaticamente. Um PR só será "mergeado" após a aprovação de pelo menos um outro membro da equipe e com a CI (GitHub Actions) passando.
-
-```
-```
